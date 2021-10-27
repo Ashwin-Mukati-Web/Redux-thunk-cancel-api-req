@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import List from '../presentational/List.jsx';
-import {fetchHello} from '../../actions';
+import {fetchList} from '../../actions/list';
 import isEmpty from 'lodash.isempty';
+import {INITIATED} from '../../actions/list'
 
 class Example extends Component {
   render() {
-    if (this.props.isLoading) {
-      return <p>Loading...</p>;
+    if (this.props.list.status === INITIATED) {
+      return <div>Loading...</div>;
     }
-
-    if (!isEmpty(this.props.list)) {
+    if (!isEmpty(this.props.list.data)) {
       return (
         <div>
           <h2>The list below is being pulled via the usual http external api.</h2>
-          <List list={this.props.list} />
+          <List list={this.props.list.data} />
         </div>
       );
     } else {
@@ -23,21 +23,20 @@ class Example extends Component {
   }
 
   componentDidMount() {
-    this.props.getHello();
+    this.props.getList();
   }
 }
 
 const mapStateToProps = state => {
   return {
-    list: state.list,
-    isLoading: state.isLoading,
+    list: state.list
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getHello: () => {
-      dispatch(fetchHello());
+    getList: () => {
+      dispatch(fetchList());
     },
   };
 };

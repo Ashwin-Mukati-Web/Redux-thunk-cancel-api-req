@@ -1,10 +1,10 @@
 import list from './list';
-import {isLoading} from './interactions';
+import itemLister from './itemLister'
 import {combineReducers} from 'redux';
 
 const reducer = combineReducers({
   list,
-  isLoading,
+  itemLister
 });
 
 export default reducer;
