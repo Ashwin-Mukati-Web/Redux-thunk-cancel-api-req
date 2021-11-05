@@ -1,16 +1,6 @@
 # React Redux Thunk Example
-
-This is an example of using React with Redux, and
-[redux-thunk](https://github.com/reduxjs/redux-thunk).
-
-With [redux-thunk](https://github.com/reduxjs/redux-thunk), you no longer need to write your own
-Middleware and call next() to move the flow forward from your middleware codebase to the reducer.
-Instead, you write **Async Actions** which returns a thunked function instead of the usual action
-object. Within your Async Action, you can dispatch any asynchromous functions.
-[redux-thunk](https://github.com/reduxjs/redux-thunk) is your middleware which adds this
-functionality.
-
-Follow the directions below to run this example locally:
+This repo contains code for using AbortController to cancel the api request(fetch) in the redux-thunk for an input field.
+I have also commented out the code for throttling the input search request.
 
 Git Clone this example:
 
