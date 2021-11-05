@@ -7,6 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import Example from './components/container/Example.jsx';
 import reducer from './reducers';
 import ItemLister from './components/container/ItemLister.jsx';
+import Movies from './components/container/Movies.jsx';
 
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(thunk)
@@ -19,8 +20,9 @@ ReactDOM.render(
       This is an example of using Async Actions with the <strong>redux-thunk</strong> module.
     </p>
     <Provider store={store}>
-      <Example />
-      <ItemLister/>
+      {/* <Example />
+      <ItemLister/> */}
+      <Movies/>
     </Provider>
   </div>,
   document.querySelector('main')
