@@ -1,6 +1,6 @@
 # React Redux Thunk Example
 This repo contains code for using AbortController to cancel the api request(fetch) in the redux-thunk for an input field.
-I have also commented out the code for throttling the input search request.
+I have also commented out the code for debouncing the input search request.
 
 Git Clone this example:
 
